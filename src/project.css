@@ -1,0 +1,38 @@
+:root {
+  /* Colors */
+  --heading-color: #212925;
+  --sub-heading-color: #343a40;
+  --content-color: #495057;
+  --background-color: #f8f9fa;
+  --container-color: #e9ecef;
+  --focus-color: #3dccc7;
+
+  /* Fonts */
+  --font-primary: "Roboto";
+  --font-secondary: "Poppins";
+  --font-heading: "Play Fair Display";
+  --font-logo: "DM Serif Display";
+
+  /* Text Size */
+  --text-lg-small: 12px;
+  --text-lg-detail: 14px;
+  --text-lg-body: 18px;
+  --text-lg-subtitle: 28px;
+  --text-lg-title: 32px;
+  --text-lg-display: 60px;
+
+  --text-md-small: 12px;
+  --text-md-detail: 14px;
+  --text-md-body: 16px;
+  --text-md-subtitle: 16px;
+  --text-md-title: 22px;
+  --text-md-display: 32px;
+
+  --text-sm-small: 10px;
+  --text-sm-detail: 12px;
+  --text-sm-body: 13px;
+  --text-sm-subtitle: 15px;
+  --text-sm-title: 17px;
+  --text-sm-display: 22px;
+}
+
