@@ -36,9 +36,29 @@
   --text-sm-display: 22px;
 }
 
-/* Style for main elements */
-.main-container {
-  background-color: var(--background-color);
+/* Style for Logo */
+.logo-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: var(--text-lg-display);
+  font-weight: 600;
   color: var(--heading-color);
+  margin-top: 10px;
+  text-decoration: none;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Style for Tag Line */
+.tag-line {
   font-family: var(--font-primary);
+  font-size: var(--text-lg-body);
+  font-weight: 400;
+  color: var(--sub-heading-color);
+  margin-top: 10px;
+  line-height: 1.6;
 }
