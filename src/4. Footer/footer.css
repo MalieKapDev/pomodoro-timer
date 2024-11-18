@@ -77,28 +77,6 @@ footer {
   transition: all 200ms ease-in-out;
 }
 
-.email-input {
-  font-family: var(--font-primary);
-  border: 1px solid var(--heading-color);
-  border-radius: 6px;
-  margin: 0;
-}
-
-.btn-subscribe {
-  font-family: var(--font-primary);
-  font-weight: 600;
-  background-color: var(--heading-color);
-  color: var(--container-color);
-  border: 1px solid var(--heading-color);
-  border-radius: 6px;
-  margin: 0;
-}
-
-.btn-subscribe:hover {
-  color: var(--focus-color);
-  transition: all 200ms ease-in-out;
-}
-
 .footer-coded {
   font-size: var(--text-lg-body);
   font-weight: 400;
