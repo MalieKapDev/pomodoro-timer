@@ -6,6 +6,14 @@ function NewsLetter() {
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
+    const clientId = process.env.CLIENT_ID;
+    const redirectUri =
+      "	https://maliekapdev-pomodoro-timer.netlify.app/oauth/callback";
+
+    const authUrl = `https://public-api.wordpress.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
+
+    window.location.href = authUrl;
+
     e.preventDefault();
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
