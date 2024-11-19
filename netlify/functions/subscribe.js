@@ -1,59 +1,75 @@
-const fetch = require("node-fetch");
-const { refreshAccessToken, isTokenExpired } = require("./auth");
+import axios from "axios";
 
-exports.handler = async (event) => {
-  const { email, refreshToken, accessToken, tokenExpiration } = JSON.parse(
-    event.body
-  );
+export const handler = async (event, context) => {
+  // CORS headers
+  const responseHeaders = {
+    "Access-Control-Allow-Origin": "*", // Allow requests from any origin; change for production
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "OPTIONS, POST, GET", // Specify allowed methods
+  };
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  // Handle preflight requests (CORS OPTIONS requests)
+  if (event.httpMethod === "OPTIONS") {
     return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Invalid email address" }),
+      statusCode: 204, // No content response for OPTIONS
+      headers: responseHeaders,
     };
   }
 
   try {
-    // Check if the token has expired and refresh if needed
-    let validAccessToken = accessToken;
+    // Parse the incoming event body to extract email and accessToken
+    const { email, accessToken } = JSON.parse(event.body);
 
-    if (isTokenExpired(tokenExpiration)) {
-      console.log("Token expired, refreshing...");
-      const refreshedTokens = await refreshAccessToken(refreshToken);
-      validAccessToken = refreshedTokens.accessToken;
+    // Validate email
+    if (!email) {
+      return {
+        statusCode: 400,
+        headers: responseHeaders, // Include CORS headers in the response
+        body: JSON.stringify({ message: "Email is required" }),
+      };
     }
 
-    const blogId = process.env.BLOG_ID;
-
-    const response = await fetch(
-      `https://public-api.wordpress.com/rest/v1.1/sites/${blogId}/subscriptions`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${validAccessToken}`,
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          email,
-          action: "subscribe",
-          blog_id: blogId,
+    // Validate access token
+    if (!accessToken) {
+      return {
+        statusCode: 400,
+        headers: responseHeaders, // Include CORS headers in the response
+        body: JSON.stringify({
+          message: "Access token is missing. Please reauthenticate.",
         }),
+      };
+    }
+
+    // Define the request URL for subscription to WordPress
+    const url = `https://public-api.wordpress.com/rest/v1.1/sites/${process.env.BLOG_ID}/subscribers/new`;
+
+    // Send a POST request to subscribe the user
+    const response = await axios.post(
+      url,
+      { email },
+      {
+        headers: { Authorization: Bearer`${accessToken}` }, // Correctly formatted authorization header
       }
     );
 
-    if (!response.ok) {
-      throw new Error("Subscription failed.");
-    }
-
+    // Return success response
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true }),
+      headers: responseHeaders, // Add CORS headers to the response
+      body: JSON.stringify({ message: "Subscription successful!" }),
     };
   } catch (error) {
-    console.error("Error during subscription:", error.message);
+    // Log the error for debugging
+    console.error("Subscription error:", error.message);
+
+    // Return error response
     return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
+      statusCode: error.response?.status || 500, // Use status from error response or default to 500
+      headers: responseHeaders, // Include CORS headers in the error response
+      body: JSON.stringify({
+        message: "Subscription failed. Please try again.",
+        error: error.response?.data || error.message, // Include detailed error information
+      }),
     };
   }
 };

@@ -148,7 +148,7 @@ const OtherProjects = () => {
         style={{ borderWidth: 2, borderStyle: "solid", borderColor: "#e9ecef" }}
       >
         <h5
-          class="card-header"
+          className="card-header"
           style={{ backgroundColor: "#e9ecef", color: "#212529" }}
         >
           Other Projects

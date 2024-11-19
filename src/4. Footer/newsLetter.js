@@ -1,42 +1,36 @@
 import React, { useState } from "react";
-import "./newsLetter.css";
+import axios from "axios";
 
-function NewsLetter() {
+const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleSubmit = async (e) => {
-    const clientId = process.env.CLIENT_ID;
-    const redirectUri =
-      "	https://maliekapdev-pomodoro-timer.netlify.app/oauth/callback";
-
-    const authUrl = `https://public-api.wordpress.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
-
-    window.location.href = authUrl;
-
     e.preventDefault();
+    setError("");
+    setStatusMessage(""); // Reset status message on new submission
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailPattern.test(email)) {
-      setError("Please enter a valid email address.");
+    if (!email) {
+      setError("Please enter a valid email.");
       return;
     }
 
     try {
-      const response = await fetch("/.netlify/functions/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_NETLIFY_FUNCTIONS_URL}/subscribe`,
+        { email }
+      );
 
-      if (!response.ok) {
-        throw new Error("Subscription failed.");
+      if (response.status === 200) {
+        setStatusMessage("Subscription successful!");
+        setEmail(""); // Clear the input field
+      } else {
+        setStatusMessage("Subscription failed. Please try again.");
       }
-
-      alert("Subscription successful!");
-      setEmail("");
-    } catch (err) {
-      setError("Subscription failed. Please try again later.");
+    } catch (error) {
+      console.error("Subscription error:", error.message);
+      setStatusMessage("An error occurred while subscribing.");
     }
   };
 
@@ -57,15 +51,12 @@ function NewsLetter() {
                     </label>
                     <input
                       type="email"
+                      id="subscribe-field" // Correctly links the label to the input
                       name="email"
                       className="email-input"
                       placeholder="Type your email…"
                       value={email}
-                      onChange={(e) => {
-                        setEmail(e.target.value);
-                        setError("");
-                      }}
-                      id="subscribe-field"
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                     />
                     {error && <small className="error">{error}</small>}
@@ -84,10 +75,11 @@ function NewsLetter() {
               </div>
             </div>
           </form>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default NewsLetter;
+export default Newsletter;
