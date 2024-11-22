@@ -44,7 +44,6 @@
 
 .card-header {
   font-family: var(--font-heading);
-  font-size: var(--text-lg-body);
   font-weight: 600;
   line-height: 1.4;
 }
@@ -53,7 +52,6 @@
 /* Style for Card Text */
 .card-title {
   font-family: var(--font-primary);
-  font-size: var(--text-lg-detail);
   font-weight: 600;
   color: var(--sub-heading-color);
   line-height: 1.4;
@@ -61,7 +59,6 @@
 
 .card-text {
   font-family: var(--font-secondary);
-  font-size: var(--text-lg-small);
   font-weight: 400;
   color: var(--content-color);
 }
@@ -69,7 +66,6 @@
 /* Style for Card Button */
 .card .btn-dark {
   font-family: var(--font-primary);
-  font-size: var(--text-lg-detail);
   font-weight: 600;
   background-color: var(--heading-color);
   color: var(--container-color);
@@ -87,7 +83,6 @@
 .pagination .page-link {
   color: var(--heading-color);
   font-family: var(--font-primary);
-  font-size: var(--text-lg-detail);
   font-weight: 400;
   text-decoration: none;
   border: 2px solid var(--container-color);
@@ -107,4 +102,86 @@
   font-weight: 600;
   border: 2px solid var(--focus-color);
   transition: all 200ms ease-in-out;
+}
+
+/* Screen Adjustments */
+/* Small Screens */
+@media (min-width: 576px) {
+  .card-header {
+    font-size: var(--text-sm-body);
+  }
+
+  /* Style for Project Individual Cards */
+  /* Style for Card Text */
+  .card-title {
+    font-size: var(--text-sm-body);
+  }
+
+  .card-text {
+    font-size: var(--text-sm-detail);
+  }
+
+  /* Style for Card Button */
+  .card .btn-dark {
+    font-size: var(--text-sm-detail);
+  }
+
+  /* Style for Pagination */
+  .pagination .page-link {
+    font-size: var(--text-sm-detail);
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+  .card-header {
+    font-size: var(--text-md-body);
+  }
+
+  /* Style for Project Individual Cards */
+  /* Style for Card Text */
+  .card-title {
+    font-size: var(--text-md-body);
+  }
+
+  .card-text {
+    font-size: var(--text-md-detail);
+  }
+
+  /* Style for Card Button */
+  .card .btn-dark {
+    font-size: var(--text-md-detail);
+  }
+
+  /* Style for Pagination */
+  .pagination .page-link {
+    font-size: var(--text-md-detail);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+  .card-header {
+    font-size: var(--text-lg-body);
+  }
+
+  /* Style for Project Individual Cards */
+  /* Style for Card Text */
+  .card-title {
+    font-size: var(--text-lg-body);
+  }
+
+  .card-text {
+    font-size: var(--text-lg-detail);
+  }
+
+  /* Style for Card Button */
+  .card .btn-dark {
+    font-size: var(--text-lg-detail);
+  }
+
+  /* Style for Pagination */
+  .pagination .page-link {
+    font-size: var(--text-lg-detail);
+  }
 }

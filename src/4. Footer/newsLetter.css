@@ -67,3 +67,16 @@
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
+
+/* Screen Adjustments */
+/* Small Screens */
+@media (min-width: 576px) {
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+}

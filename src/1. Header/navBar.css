@@ -59,9 +59,33 @@
 /* Style for Nav Bar Links */
 .nav-link {
   font-family: var(--font-primary);
-  font-size: var(--text-lg-body);
   font-weight: 400;
   color: var(--content-color);
   margin: 0 20px 0 20px;
   line-height: 1.4;
+}
+
+/* Screen Adjustments */
+/* Small Screens */
+@media (min-width: 576px) {
+  /* Style for Nav Bar Links */
+  .nav-link {
+    font-size: var(--text-sm-body);
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+  /* Style for Nav Bar Links */
+  .nav-link {
+    font-size: var(--text-md-body);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+  /* Style for Nav Bar Links */
+  .nav-link {
+    font-size: var(--text-lg-body);
+  }
 }

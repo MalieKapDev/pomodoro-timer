@@ -38,7 +38,6 @@
 
 .talk-button {
   font-family: var(--font-primary);
-  font-size: var(--text-lg-detail);
   font-weight: 600;
   background-color: var(--heading-color);
   color: var(--container-color);
@@ -56,7 +55,6 @@
 .talk-link {
   text-decoration: none;
   font-family: var(--font-primary);
-  font-size: var(--text-lg-detail);
   font-weight: 600;
   color: var(--container-color);
 }
@@ -64,4 +62,38 @@
 .talk-link:hover {
   color: var(--focus-color);
   transition: all 200ms ease-in-out;
+}
+
+/* Screen Adjustments */
+/* Small Screens */
+@media (min-width: 576px) {
+  .talk-button {
+    font-size: var(--text-sm-detail);
+  }
+
+  .talk-link {
+    font-size: var(--text-sm-detail);
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+  .talk-button {
+    font-size: var(--text-md-detail);
+  }
+
+  .talk-link {
+    font-size: var(--text-md-detail);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+  .talk-button {
+    font-size: var(--text-lg-detail);
+  }
+
+  .talk-link {
+    font-size: var(--text-lg-detail);
+  }
 }

@@ -44,7 +44,6 @@
 
 .logo {
   font-family: var(--font-logo);
-  font-size: var(--text-lg-display);
   font-weight: 600;
   color: var(--heading-color);
   margin-top: 10px;
@@ -56,9 +55,48 @@
 /* Style for Tag Line */
 .tag-line {
   font-family: var(--font-primary);
-  font-size: var(--text-lg-body);
   font-weight: 400;
   color: var(--sub-heading-color);
   margin-top: 10px;
   line-height: 1.6;
+}
+
+/* Screen Adjustments */
+/* Small Screens */
+@media (min-width: 576px) {
+  /* Style for Logo */
+  .logo {
+    font-size: var(--text-sm-display);
+  }
+
+  /* Style for Tag Line */
+  .tag-line {
+    font-size: var(--text-sm-body);
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+  /* Style for Logo */
+  .logo {
+    font-size: var(--text-md-display);
+  }
+
+  /* Style for Tag Line */
+  .tag-line {
+    font-size: var(--text-md-body);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+  /* Style for Logo */
+  .logo {
+    font-size: var(--text-lg-display);
+  }
+
+  /* Style for Tag Line */
+  .tag-line {
+    font-size: var(--text-lg-body);
+  }
 }

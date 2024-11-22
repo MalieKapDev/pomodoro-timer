@@ -36,3 +36,15 @@
   --text-sm-display: 22px;
 }
 
+/* Screen Adjustments */
+/* Small Screens */
+@media (min-width: 576px) {
+}
+
+/* Medium Screens */
+@media (min-width: 768px) {
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+}
