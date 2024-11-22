@@ -209,7 +209,6 @@ const OtherProjects = () => {
             </div>
           ))}
         </div>
-
         <nav aria-label="Page navigation example">
           <ul className="pagination justify-content-center">
             <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
@@ -222,19 +221,36 @@ const OtherProjects = () => {
                 Previous
               </button>
             </li>
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <li
-                key={page}
-                className={`page-item ${page === currentPage ? "active" : ""}`}
-              >
-                <button
-                  className="page-link mx-1"
-                  onClick={() => handlePageChange(page)}
+            {/* Dynamically Render Page Numbers */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1)
+              .filter((page) => {
+                if (window.innerWidth > 768) {
+                  // Show all pages for larger screens
+                  return true;
+                } else {
+                  // Show limited pages for smaller screens
+                  if (totalPages <= 3) return true; // Show all if 3 or fewer pages
+                  if (currentPage <= 2) return page <= 3; // First 3 pages
+                  if (currentPage >= totalPages - 1)
+                    return page >= totalPages - 2; // Last 3 pages
+                  return page >= currentPage - 1 && page <= currentPage + 1; // Middle range
+                }
+              })
+              .map((page) => (
+                <li
+                  key={page}
+                  className={`page-item ${
+                    page === currentPage ? "active" : ""
+                  }`}
                 >
-                  {page}
-                </button>
-              </li>
-            ))}
+                  <button
+                    className="page-link"
+                    onClick={() => handlePageChange(page)}
+                  >
+                    {page}
+                  </button>
+                </li>
+              ))}
             <li
               className={`page-item ${
                 currentPage === totalPages ? "disabled" : ""
