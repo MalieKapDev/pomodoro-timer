@@ -2,7 +2,7 @@ import React from "react";
 import "./footer.css";
 import FollowMe from "./followMe";
 import Menu from "./menu";
-import NewsLetter from "./newsLetter";
+import TalkToMe from "./talkToMe";
 
 function Footer() {
   return (
@@ -19,8 +19,8 @@ function Footer() {
             <Menu />
           </div>
           <div className="col-lg-5 col-12 sign-up">
-            <h6 className="footer-headings pb-3">Sign up for Newsletter</h6>
-            <NewsLetter />
+            <h6 className="footer-headings pb-3">Get in Touch</h6>
+            <TalkToMe />
           </div>
         </div>
       </footer>
