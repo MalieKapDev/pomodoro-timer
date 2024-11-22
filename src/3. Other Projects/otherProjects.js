@@ -114,6 +114,38 @@ const projects = [
     link: "https://maliekapdev-pomodoro-timer.netlify.app/",
     alt: "Pomodoro Clock Screenshot",
   },
+  {
+    title: "Dragon Repeller RPG - Game",
+    description:
+      "Embark on an epic adventure, a thrilling web-based experience featuring dynamic animations, engaging storyline, and a responsive user interface crafted with HTML, CSS, and JavaScript, tailored to meet FreeCodeCamp certification requirements.",
+    imgSrc: "...",
+    link: "https://codepen.io/MalieKap/full/MWxpGag",
+    alt: "Dragon Repeller RPG - Game Screenshot",
+  },
+  {
+    title: "Music Player",
+    description:
+      "Powered by JavaScript, offering seamless playback of audio tracks, with features such as playlist management, playback controls, and audio visualization, providing users with an immersive listening experience across various devices.",
+    imgSrc: "...",
+    link: "https://codepen.io/MalieKap/full/qBvmxeg",
+    alt: "Music Player Screenshot",
+  },
+  {
+    title: "Weather App",
+    description:
+      "By leveraging the power of JavaScript, I developed a dynamic weather application that fetches real-time API data and beautifully displays the current weather conditions as well as the forecasted weather for the searched city.",
+    imgSrc: "...",
+    link: "https://weather-app-maliekapdev.netlify.app/",
+    alt: "Weather App Screenshot",
+  },
+  {
+    title: "React Weather App",
+    description:
+      "Rebuilt the weather app using React, integrating live news headlines and weather forecast API's for a seamless user experience.",
+    imgSrc: "...",
+    link: "https://react-weather-app-maliekapdev.netlify.app/",
+    alt: "React Weather App Screenshot",
+  },
   // Add other projects here
 ];
 
