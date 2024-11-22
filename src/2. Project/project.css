@@ -35,16 +35,143 @@
   --text-sm-title: 17px;
   --text-sm-display: 22px;
 }
+.main-timer-container {
+  background-color: transparent;
+  padding: 13px 18px;
+}
+
+/* Length Control Styling */
+.length-control {
+  color: var(--content-color);
+  margin: 0 auto;
+  text-align: center;
+  padding: 13px 18px;
+  background-color: var(--container-color);
+  border: 1px solid var(--container-color);
+  border-radius: 6px;
+}
+
+.btn-level {
+  color: var(--content-color);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn-level:hover {
+  color: var(--focus-color);
+  transition: all 200ms ease-in-out;
+}
+
+.length-control-heading {
+  color: var(--content-color);
+  padding: 0 5px 0 5px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+/* Timer Styling */
+.timer {
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+}
+
+.timer-wrapper {
+  padding: 13px 18px;
+  background-color: var(--container-color);
+  border: 1px solid var(--container-color);
+  border-radius: 6px;
+}
+
+.timer-wrapper-heading {
+  color: var(--content-color);
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+.timer-wrapper-time-left {
+  color: var(--heading-color);
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+/* Timer Control Styling */
+.timer-control {
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 15px;
+  background-color: var(--container-color);
+  border: 1px solid var(--container-color);
+  border-radius: 6px;
+  width: fit-content;
+}
+.timer-control-btn {
+  color: var(--sub-heading-color);
+  padding: 13px 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.timer-control-btn:hover {
+  color: var(--focus-color);
+  transition: all 200ms ease-in-out;
+}
+
+.timer-control-btn:active {
+  color: var(--focus-color);
+  transition: all 200ms ease-in-out;
+}
 
 /* Screen Adjustments */
 /* Small Screens */
 @media (min-width: 576px) {
+  /* Length Control Styling */
+  .length-control-heading {
+    font-size: var(--text-sm-body);
+  }
+
+  /* Timer Styling */
+  .timer-wrapper-heading {
+    font-size: var(--text-sm-subtitle);
+  }
+
+  .timer-wrapper-time-left {
+    font-size: var(--text-sm-title);
+  }
 }
 
 /* Medium Screens */
 @media (min-width: 768px) {
+  /* Length Control Styling */
+  .length-control-heading {
+    font-size: var(--text-md-body);
+  }
+
+  /* Timer Styling */
+  .timer-wrapper-heading {
+    font-size: var(--text-md-subtitle);
+  }
+
+  .timer-wrapper-time-left {
+    font-size: var(--text-md-title);
+  }
 }
 
 /* Large Screens */
 @media (min-width: 1024px) {
+  /* Length Control Styling */
+  .length-control-heading {
+    font-size: var(--text-lg-body);
+  }
+
+  /* Timer Styling */
+  .timer-wrapper-heading {
+    font-size: var(--text-lg-subtitle);
+  }
+
+  .timer-wrapper-time-left {
+    font-size: var(--text-lg-title);
+  }
 }
