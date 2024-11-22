@@ -87,16 +87,16 @@ footer {
 @media (min-width: 576px) {
   /* Style for Footer*/
   .footer-headings {
-    font-size: var(--text-sm-body);
+    font-size: var(--text-sm-title);
   }
 
   .menu a,
   .menu li {
-    font-size: var(--text-sm-detail);
+    font-size: var(--text-sm-body);
   }
 
   .footer-coded {
-    font-size: var(--text-sm-small);
+    font-size: var(--text-sm-detail);
   }
 }
 
@@ -104,16 +104,16 @@ footer {
 @media (min-width: 768px) {
   /* Style for Footer*/
   .footer-headings {
-    font-size: var(--text-md-body);
+    font-size: var(--text-md-title);
   }
 
   .menu a,
   .menu li {
-    font-size: var(--text-md-detail);
+    font-size: var(--text-md-body);
   }
 
   .footer-coded {
-    font-size: var(--text-md-small);
+    font-size: var(--text-md-detail);
   }
 }
 
@@ -121,12 +121,12 @@ footer {
 @media (min-width: 1024px) {
   /* Style for Footer*/
   .footer-headings {
-    font-size: var(--text-lg-body);
+    font-size: var(--text-lg-subtitle);
   }
 
   .menu a,
   .menu li {
-    font-size: var(--text-lg-detail);
+    font-size: var(--text-lg-body);
   }
 
   .footer-coded {
