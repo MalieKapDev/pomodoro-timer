@@ -35,8 +35,18 @@
   --text-sm-title: 17px;
   --text-sm-display: 22px;
 }
+
+.card-text a {
+  color: var(--focus-color);
+  font-weight: 600;
+}
+
 .main-timer-container {
-  background-color: transparent;
+  background-color: #ffffff;
+  border: 2px solid var(--container-color);
+  border-radius: 6px;
+  margin: 0 auto;
+  text-align: center;
   padding: 13px 18px;
 }
 
@@ -45,10 +55,11 @@
   color: var(--content-color);
   margin: 0 auto;
   text-align: center;
-  padding: 13px 18px;
   background-color: var(--container-color);
   border: 1px solid var(--container-color);
   border-radius: 6px;
+  width: 60%;
+  justify-self: center;
 }
 
 .btn-level {
@@ -65,7 +76,6 @@
 
 .length-control-heading {
   color: var(--content-color);
-  padding: 0 5px 0 5px;
   font-family: var(--font-primary);
   font-weight: 400;
 }
@@ -73,8 +83,9 @@
 /* Timer Styling */
 .timer {
   margin: 0 auto;
-  padding: 50px;
   text-align: center;
+  width: 60%;
+  justify-self: center;
 }
 
 .timer-wrapper {
@@ -104,8 +115,10 @@
   background-color: var(--container-color);
   border: 1px solid var(--container-color);
   border-radius: 6px;
-  width: fit-content;
+  width: 60%;
+  justify-self: center;
 }
+
 .timer-control-btn {
   color: var(--sub-heading-color);
   padding: 13px 18px;

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./otherProjects.css";
 
+import pomodoroTimerScreenshot from "./pomodoroTimerScreenshot.png";
+
 const projects = [
   {
     title: "To Do List",
@@ -107,12 +109,12 @@ const projects = [
     alt: "JavaScript Calculator Screenshot",
   },
   {
-    title: "Pomodoro Clock",
+    title: "Pomodoro Timer",
     description:
-      "Crafted in the React framework it allows users to set custom sessions and break durations. Facilitating time management and productivity with visual cues and alerts for seamless workflow scheduling.",
-    imgSrc: "...",
+      "A React-based Pomodoro Timer with customizable durations, dynamic visuals, and responsive design for seamless productivity.",
+    imgSrc: `${pomodoroTimerScreenshot}`,
     link: "https://maliekapdev-pomodoro-timer.netlify.app/",
-    alt: "Pomodoro Clock Screenshot",
+    alt: "Pomodoro Timer Screenshot",
   },
   {
     title: "Dragon Repeller RPG - Game",
