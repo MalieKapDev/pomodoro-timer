@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./otherProjects.css";
 
 import pomodoroTimerScreenshot from "./pomodoroTimerScreenshot.png";
+import calculatorScreenshot from "./calculatorScreenshot.png";
 
 const projects = [
   {
@@ -101,12 +102,12 @@ const projects = [
     alt: "Drum Machine Screenshot",
   },
   {
-    title: "JavaScript Calculator",
+    title: "Calculator",
     description:
       "Developed using the React framework it offers a dynamic interface for performing various mathematical operations with ease and precision, providing users with a versatile tool for quick calculations in a modern and user-friendly interface.",
-    imgSrc: "...",
-    link: "https://javascript-calculator-maliekapdev.netlify.app/",
-    alt: "JavaScript Calculator Screenshot",
+    imgSrc: `${calculatorScreenshot}`,
+    link: "https://maliekapdev-calculator.netlify.app/",
+    alt: "Calculator Screenshot",
   },
   {
     title: "Pomodoro Timer",
